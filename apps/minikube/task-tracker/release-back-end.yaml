@@ -8,7 +8,7 @@ spec:
   releaseName: task-tracker-back-end
   chart:
     spec:
-      chart: ../../base/task-tracker-back-end
+      chart: ../base/task-tracker-back-end
       sourceRef:
         kind: GitRepository
         name: flux-system
