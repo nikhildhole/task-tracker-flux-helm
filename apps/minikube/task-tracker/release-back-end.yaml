@@ -10,3 +10,5 @@ spec:
     kind: ExternalArtifact
     name: apps
   path: "./base/task-tracker-back-end"
+  prune: true
+  wait: true
