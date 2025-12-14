@@ -13,3 +13,8 @@ spec:
   install:
     remediation:
       retries: 3
+  values:
+    auth:
+      database: taskdb
+      username: postgres
+      password: postgres
