@@ -9,9 +9,9 @@ spec:
     spec:
       chart: postgresql
       sourceRef:
-        kind: HelmRepository
-        name: bitnami
-        namespace: bitnami
+        kind: OCIRepository
+        name: postgresql
+        namespace: postgresql
   interval: 50m
   install:
     remediation:
