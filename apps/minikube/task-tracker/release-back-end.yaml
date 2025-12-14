@@ -6,9 +6,7 @@ metadata:
 spec:
   interval: 1m
   releaseName: task-tracker-back-end
-  chart:
-    spec:
-      chart: ./base/task-tracker-back-end
-      sourceRef:
-        kind: ExternalArtifact
-        name: apps
+  chartRef:
+    kind: ExternalArtifact
+    name: apps
+  path: "./base/task-tracker-back-end"
