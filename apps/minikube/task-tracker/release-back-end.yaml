@@ -6,9 +6,10 @@ metadata:
 spec:
   interval: 1m
   releaseName: task-tracker-back-end
-  chartRef:
-    kind: ExternalArtifact
-    name: apps
-  path: "./base/task-tracker-back-end"
-  prune: true
-  wait: true
+  chart:
+    spec:
+      chart: ../../../apps/base/task-tracker-back-end
+      sourceRef:
+        kind: GitRepository
+        name: flux-system
+        namespace: flux-system
