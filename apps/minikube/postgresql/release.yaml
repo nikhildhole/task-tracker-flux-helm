@@ -9,7 +9,7 @@ spec:
     spec:
       chart: postgresql
       sourceRef:
-        kind: HelmRepository
+        kind: OCIRepository
         name: bitnami
         namespace: bitnami
   interval: 50m
