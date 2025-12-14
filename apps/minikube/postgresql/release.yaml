@@ -1,5 +1,5 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
-kind: HelmRelease
+kind: OCIRepository
 metadata:
   name: postgresql
   namespace: postgresql
@@ -9,7 +9,7 @@ spec:
     spec:
       chart: postgresql
       sourceRef:
-        kind: OCIRepository
+        kind: HelmRepository
         name: bitnami
         namespace: bitnami
   interval: 50m
