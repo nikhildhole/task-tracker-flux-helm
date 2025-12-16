@@ -43,13 +43,13 @@ spec:
             - name: SPRING_DATASOURCE_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: tasktracker-db
+                  name: {{ include "task-tracker-back-end.fullname" . }}
                   key: SPRING_DATASOURCE_USERNAME
 
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: tasktracker-db
+                  name: {{ include "task-tracker-back-end.fullname" . }}
                   key: SPRING_DATASOURCE_PASSWORD
       volumes:
         - name: config
