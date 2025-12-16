@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: ztunnel
+  namespace: istio-system
+spec:
+  interval: 1m
+  releaseName: ztunnel
+  chart:
+    spec:
+      chart: ../../../infrastructure/base/ztunnel
+      sourceRef:
+        kind: GitRepository
+        name: flux-system
+        namespace: flux-system
