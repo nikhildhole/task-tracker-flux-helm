@@ -4,7 +4,7 @@ metadata:
   name: {{ include "task-tracker-front-end.fullname" . }}
   labels:
     {{- include "task-tracker-front-end.labels" . | nindent 4 }}
-    istio.io/use-waypoint: {{ .Values.service.istioUseWaypoint}}
+    istio.io/use-waypoint: "{{ .Values.service.istioUseWaypoint}}"
 spec:
   type: {{ .Values.service.type }}
   ports:

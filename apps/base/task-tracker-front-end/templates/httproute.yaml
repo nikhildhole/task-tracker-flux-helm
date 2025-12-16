@@ -9,4 +9,4 @@ spec:
   rules:
   - backendRefs:
     - name: {{ include "task-tracker-front-end.fullname" . }}
-      port: "{{ .Values.service.istioUseWaypoint }}"
+      port: {{ .Values.service.port }}
