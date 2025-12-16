@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: task-tracker-front-end
+  namespace: task-tracker
+spec:
+  interval: 1m
+  releaseName: task-tracker-front-end
+  chart:
+    spec:
+      chart: ../../../apps/base/task-tracker-front-end
+      sourceRef:
+        kind: GitRepository
+        name: flux-system
+        namespace: flux-system

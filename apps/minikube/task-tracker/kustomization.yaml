@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - release-back-end.yaml
+  - release-front-end.yaml
