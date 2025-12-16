@@ -6,3 +6,4 @@ resources:
   - istiod.yaml
   - cni.yaml
   - ztunnel.yaml
+  - gateway.yaml

@@ -1,0 +1,12 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: {{ include "task-tracker-front-end.fullname" . }}
+spec:
+  parentRefs:
+  - name: external-gw
+    namespace: istio-system
+  rules:
+  - backendRefs:
+    - name: {{ include "task-tracker-front-end.fullname" . }}
+      port: {{ .Values.service.port }}
