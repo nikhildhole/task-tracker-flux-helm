@@ -38,5 +38,5 @@ spec:
               mountPath: /src/main/resources
       volumes:
         - name: config
-          configMap:
+          secret:
             name: {{ include "task-tracker-back-end.fullname" . }}
