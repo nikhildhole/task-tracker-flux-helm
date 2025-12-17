@@ -5,3 +5,4 @@ resources:
   - release-back-end.yaml
   - release-front-end.yaml
   - waypoint-gateway.yaml
+  - gateway.yaml
