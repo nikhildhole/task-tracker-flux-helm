@@ -7,6 +7,10 @@ spec:
   - name: external-gw
     namespace: istio-system
   rules:
-  - backendRefs:
-    - name: {{ include "task-tracker-front-end.fullname" . }}
-      port: {{ .Values.service.port }}
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /
+    - backendRefs:
+      - name: {{ include "task-tracker-front-end.fullname" . }}
+        port: {{ .Values.service.port }}

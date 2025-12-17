@@ -34,5 +34,5 @@ spec:
               containerPort: {{ .Values.service.port }}
               protocol: TCP
           env:
-            - name: BACK_END_API_URL
-              value: "http://task-tracker-back-end.task-tracker:8080"
+            - name: NEXT_PUBLIC_BACK_END_API_URL
+              value: "/back-end"
