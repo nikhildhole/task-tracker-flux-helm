@@ -33,3 +33,6 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+          env:
+            - name: BACK_END_API_URL
+              value: "http://task-tracker-back-end.other-namespace.svc.cluster.local:8080"
