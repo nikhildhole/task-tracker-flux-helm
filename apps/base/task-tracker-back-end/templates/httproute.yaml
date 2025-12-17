@@ -6,17 +6,13 @@ spec:
   parentRefs:
   - name: external-gw
     namespace: istio-system
+  hostnames:
+  - back-end.example.com
   rules:
   - matches:
     - path:
         type: PathPrefix
-        value: /back-end
-    filters:
-    - type: URLRewrite
-      urlRewrite:
-        path:
-          type: ReplacePrefixMatch
-          replacePrefixMatch: /
+        value: /
     backendRefs:
     - name: {{ include "task-tracker-back-end.fullname" . }}
       port: {{ .Values.service.port }}

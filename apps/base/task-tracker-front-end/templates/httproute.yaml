@@ -6,6 +6,8 @@ spec:
   parentRefs:
   - name: external-gw
     namespace: istio-system
+  hostnames:
+  - front-end.example.com
   rules:
   - matches:
     - path:
