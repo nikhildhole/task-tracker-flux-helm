@@ -16,3 +16,6 @@ spec:
   dependsOn:
   - name: istiod
     namespace: istio-system
+  values:
+    image:
+      tag: "6.0.0"
