@@ -35,4 +35,4 @@ spec:
               protocol: TCP
           env:
             - name: BACK_END_API_URL
-              value: "http://task-tracker-back-end.other-namespace.svc.cluster.local:8080"
+              value: "http://task-tracker-back-end.task-tracker.svc.cluster.local:8080"
