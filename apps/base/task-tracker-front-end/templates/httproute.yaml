@@ -10,13 +10,7 @@ spec:
   - matches:
     - path:
         type: PathPrefix
-        value: /front-end
-    filters:
-    - type: URLRewrite
-      urlRewrite:
-        path:
-          type: ReplacePrefixMatch
-          replacePrefixMatch: /
+        value: /
     backendRefs:
     - name: {{ include "task-tracker-front-end.fullname" . }}
       port: {{ .Values.service.port }}
