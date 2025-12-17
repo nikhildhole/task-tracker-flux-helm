@@ -35,4 +35,4 @@ spec:
               protocol: TCP
           env:
             - name: NEXT_PUBLIC_BACK_END_API_URL
-              value: "/back-end"
+              value: "http://back-end.example.com"
