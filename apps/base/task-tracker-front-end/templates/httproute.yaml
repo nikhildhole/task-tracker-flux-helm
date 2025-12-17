@@ -11,6 +11,6 @@ spec:
     - path:
         type: PathPrefix
         value: /
-    - backendRefs:
-      - name: {{ include "task-tracker-front-end.fullname" . }}
-        port: {{ .Values.service.port }}
+    backendRefs:
+    - name: {{ include "task-tracker-front-end.fullname" . }}
+      port: {{ .Values.service.port }}
