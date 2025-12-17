@@ -33,6 +33,3 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
-          env:
-            - name: NEXT_PUBLIC_BACK_END_API_URL
-              value: "http://back-end.example.com"
