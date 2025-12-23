@@ -1,5 +1,12 @@
 # Flux + Kubernetes Commands Reference
 
+## 0. Delete Minikube clusters and start again
+
+```powershell
+minikube stop
+minikube delete --all --purge
+minikube start
+```
 
 ## 1. GitHub Environment Variables
 
@@ -130,10 +137,10 @@ kubectl port-forward -n istio-system svc/external-gw-istio 80:80
 
 This command set supports:
 
-* Flux bootstrap and reconciliation
-* Helm-based application deployment
-* Artifact and resource inspection
-* In-cluster and local testing
-* Istio gateway exposure
+- Flux bootstrap and reconciliation
+- Helm-based application deployment
+- Artifact and resource inspection
+- In-cluster and local testing
+- Istio gateway exposure
 
 Use this document as a quick operational reference for the **task-tracker Flux + Helm + Istio setup**.
