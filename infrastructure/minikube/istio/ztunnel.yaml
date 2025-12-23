@@ -13,3 +13,10 @@ spec:
         kind: GitRepository
         name: flux-system
         namespace: flux-system
+  dependsOn:
+    - name: istio-base
+      namespace: istio-system
+    - name: istiod
+      namespace: istio-system
+    - name: cni
+      namespace: istio-system
