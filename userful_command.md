@@ -6,6 +6,7 @@
 minikube stop
 minikube delete --all --purge
 minikube start
+minikube addons enable metrics-server
 ```
 
 ## 1. GitHub Environment Variables
@@ -45,6 +46,7 @@ flux bootstrap github `
 
 ```bash
 flux reconcile source git flux-system -n flux-system
+flux reconcile helmrelease task-tracker-front-end -n task-tracker
 flux reconcile helmrelease task-tracker-back-end -n task-tracker
 ```
 
@@ -90,8 +92,8 @@ kubectl get service -A
 ## 8. Render Helm Charts Locally
 
 ```bash
-helm template task-tracker-back-end ./task-tracker-back-end
-helm template task-tracker-front-end ./task-tracker-front-end
+helm template task-tracker-back-end ./apps/base/task-tracker-back-end
+helm template task-tracker-front-end ./apps/base/task-tracker-front-end
 ```
 
 ---
