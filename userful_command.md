@@ -92,6 +92,7 @@ kubectl get service -A
 ## 8. Render Helm Charts Locally
 
 ```bash
+helm template task-tracker-back-end ./infrastructure/base/crd
 helm template task-tracker-back-end ./apps/base/task-tracker-back-end
 helm template task-tracker-front-end ./apps/base/task-tracker-front-end
 ```
