@@ -7,4 +7,3 @@ resources:
   - cni.yaml
   - ztunnel.yaml
   - gateway.yaml
-  - experimental-install.yaml

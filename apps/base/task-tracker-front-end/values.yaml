@@ -108,7 +108,7 @@ affinity:
 
 vpa:
   enabled: true
-  updateMode: Off   # Off | Auto | Recreate (keep Off with HPA)
+  updateMode: "Off"   # Off | Auto | Recreate (keep Off with HPA)
   minAllowed:
     cpu: 100m
     memory: 128Mi
