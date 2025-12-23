@@ -11,7 +11,7 @@ image:
   # This sets the pull policy for images.
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "6.0.0"
+  tag: "7.0.0"
 
 # This is to override the chart name.
 nameOverride: ""
@@ -37,8 +37,8 @@ terminationGracePeriodSeconds: 30
 autoscaling:
   enabled: true
 
-  minReplicas: 2
-  maxReplicas: 3
+  minReplicas: 1
+  maxReplicas: 2
 
   targetCPUUtilizationPercentage: 60
   targetMemoryUtilizationPercentage: 70
@@ -66,3 +66,36 @@ resources:
 pdb:
   enabled: true
   minAvailable: 1
+
+
+
+serviceAccount:
+  create: true
+  name: ""   # empty = auto-generate using fullname
+  automount: true
+
+
+rbac:
+  create: true
+  rules:
+    - apiGroups: [""]
+      resources:
+        - pods
+        - configmaps
+      verbs:
+        - get
+        - list
+        - watch
+
+
+podSecurityContext:
+  runAsNonRoot: true
+  runAsUser: 10001
+  fsGroup: 10001
+
+containerSecurityContext:
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
+  capabilities:
+    drop:
+      - ALL
