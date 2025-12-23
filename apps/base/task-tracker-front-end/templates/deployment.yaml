@@ -31,10 +31,22 @@ spec:
     spec:
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
       serviceAccountName: {{ include "task-tracker-front-end.serviceAccountName" . }}
-      
+
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       
+      {{- if .Values.affinity.podAntiAffinity.enabled }}
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    {{- include "task-tracker-front-end.selectorLabels" $ | nindent 20 }}
+                topologyKey: kubernetes.io/hostname
+      {{- end }}
+
       containers:
         - name: {{ .Chart.Name }}
 

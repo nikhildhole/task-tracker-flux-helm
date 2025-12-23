@@ -99,3 +99,8 @@ containerSecurityContext:
   capabilities:
     drop:
       - ALL
+
+
+affinity:
+  podAntiAffinity:
+    enabled: true
