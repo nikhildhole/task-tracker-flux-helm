@@ -1,15 +1,15 @@
-apiVersion: gateway.networking.k8s.io/v1
-kind: Gateway
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
 metadata:
-  name: external-gw
+  name: gateway
   namespace: istio-system
 spec:
-  gatewayClassName: istio
-  listeners:
-  - name: http
-    protocol: HTTP
-    port: 80
-    hostname: "*.example.com"
-    allowedRoutes:
-      namespaces:
-        from: All
+  interval: 1m
+  releaseName: gateway
+  chart:
+    spec:
+      chart: ../../../infrastructure/base/gateway
+      sourceRef:
+        kind: GitRepository
+        name: flux-system
+        namespace: flux-system
