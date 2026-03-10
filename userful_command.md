@@ -111,12 +111,20 @@ curl -v http://task-tracker-back-end:8080/api/tasks
 
 ---
 
-## 10. Local Hosts File Configuration (Windows)
+## 10. Local Hosts File Configuration
+
+### For Windows
 
 **File:**
 
 ```
 C:\Windows\System32\drivers\etc\hosts
+```
+
+### For MacOS and Linux
+
+```
+\etc\host
 ```
 
 **Entries:**
